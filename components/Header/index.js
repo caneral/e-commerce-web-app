@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <header className="h-[50px] bg-[#2A59FE] ">
+    <header className="h-[50px] bg-[#2A59FE] fixed top-0 w-full">
       <div className="lg:container lg:mx-auto mx-4 h-full flex items-center">
         <div className="w-4/12  text-white font-extrabold text-2xl">
           Eteration
