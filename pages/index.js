@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
+import Card from "../components/Card";
+import Filter from "../components/HomeScreen/Filter";
 import Product from "../components/HomeScreen/Product";
 import getProducts from "../redux/actions/products";
 
@@ -30,7 +32,7 @@ const Home = () => {
 
   return (
     <div className="flex">
-      <div className="w-4/12 ">Filter Area</div>
+      <Filter />
       <div className="w-8/12">
         <div className="flex flex-wrap gap-[15px]">
           {currentItems?.map((item) => (
