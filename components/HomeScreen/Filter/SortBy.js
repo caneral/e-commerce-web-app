@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { sortProducts } from "../../../redux/actions/products";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setSelectedSortType,
+  sortProducts,
+} from "../../../redux/actions/products";
 import Card from "../../Card";
 
 const SortBy = () => {
   const dispatch = useDispatch();
-  const [selected, setSelected] = useState(null);
+  const { selectedSortType } = useSelector((state) => state.products);
 
   useEffect(() => {
-    if (selected) dispatch(sortProducts(selected));
-  }, [selected, dispatch]);
+    if (selectedSortType) dispatch(sortProducts(selectedSortType));
+  }, [selectedSortType, dispatch]);
 
   return (
     <Card title="Sort By">
@@ -19,7 +22,7 @@ const SortBy = () => {
           type="radio"
           name="sort-by"
           value="old-to-new"
-          onChange={() => setSelected("old-to-new")}
+          onChange={() => dispatch(setSelectedSortType("old-to-new"))}
         />
         <label
           htmlFor="old-to-new"
@@ -34,7 +37,7 @@ const SortBy = () => {
           type="radio"
           name="sort-by"
           value="new-to-old"
-          onChange={() => setSelected("new-to-old")}
+          onChange={() => dispatch(setSelectedSortType("new-to-old"))}
         />
         <label
           htmlFor="new-to-old"
@@ -49,7 +52,7 @@ const SortBy = () => {
           type="radio"
           name="sort-by"
           value="price-hight-to-low"
-          onChange={() => setSelected("price-hight-to-low")}
+          onChange={() => dispatch(setSelectedSortType("price-hight-to-low"))}
         />
         <label
           htmlFor="price-hight-to-low"
@@ -64,7 +67,7 @@ const SortBy = () => {
           type="radio"
           name="sort-by"
           value="price-low-to-high"
-          onChange={() => setSelected("price-low-to-hight")}
+          onChange={() => dispatch(setSelectedSortType("price-low-to-hight"))}
         />
         <label
           htmlFor="price-low-to-high"
