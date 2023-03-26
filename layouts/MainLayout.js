@@ -9,11 +9,11 @@ const MainLayout = ({ children }) => {
   const { cart, totalAmount } = useSelector((state) => state.cart);
 
   return (
-    <div className="min-h-screen mt-[50px] pt-[26px] bg-[#F9F9F9]">
+    <div className="min-h-screen mt-[50px]   bg-[#F9F9F9]">
       <Header />
-      <div className="flex w-full lg:container lg:mx-auto px-4">
-        <div className=" w-9/12 mr-6">{children}</div>
-        <div className="w-3/12">
+      <div className="flex flex-col lg:flex-row lg:container lg:mx-auto px-4 lg:mt-16 lg:pt-4 mt-16">
+        <div className="w-full lg:w-9/12 lg:mr-6">{children}</div>
+        <div className="w-full lg:w-3/12 mt-4 lg:mt-0">
           <Card title="Cart">
             <div className="max-h-64 overflow-scroll">
               {cart.length > 0 ? (
@@ -21,7 +21,7 @@ const MainLayout = ({ children }) => {
                   <div key={item.id} className="flex gap-2 mb-4">
                     <div className="w-1/2 flex-col">
                       <p className="text-sm font-light">{item.name}</p>
-                      <p className="text-sm text-[#2A59FE]">{item.price}</p>
+                      <p className="text-sm text-primary">{item.price}</p>
                     </div>
                     <div className="w-1/2 flex">
                       <button
@@ -30,7 +30,7 @@ const MainLayout = ({ children }) => {
                       >
                         -
                       </button>
-                      <span className="w-8 h-8 flex justify-center items-center bg-[#2A59FE] text-white">
+                      <span className="w-8 h-8 flex justify-center items-center bg-primary text-white">
                         {item.quantity}
                       </span>
                       <button
@@ -50,9 +50,9 @@ const MainLayout = ({ children }) => {
           <Card title="Checkout">
             <div className="mb-4">
               Total Price:{" "}
-              <span className="text-[#2A59FE] font-bold">{totalAmount}₺</span>
+              <span className="text-primary font-bold">{totalAmount}₺</span>
             </div>
-            <button className="bg-[#2A59FE] text-white w-full py-2 rounded">
+            <button className="bg-primary text-white w-full py-2 rounded">
               Checkout
             </button>
           </Card>

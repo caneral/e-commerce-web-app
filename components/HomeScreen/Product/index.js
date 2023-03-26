@@ -16,27 +16,26 @@ const Product = ({ product }) => {
   return (
     <Link
       href={`detail/${id}`}
-      className="bg-white w-[180px] p-[10px] overflow-hidden"
+      className="bg-white w-full md:w-[180px] p-[10px] overflow-hidden flex flex-col"
     >
       <Image
-        className="mb-[15px]"
+        className="mb-[15px] w-full md:w-[180px]"
         src={image}
         width={640}
         height={480}
         alt={name}
       />
-
-      <div>
-        <p className="text-[#2A59FE] text-sm mb-[15px]">{price} ₺</p>
+      <div className="flex-grow flex flex-col justify-center">
+        <p className="text-primary text-sm mb-[15px]">{price} ₺</p>
         <p className="mb-[15px] line-clamp-1">{name}</p>
+        <button
+          type="button"
+          onClick={handleAddToCart}
+          className="bg-primary text-white w-full py-2 px-4 rounded"
+        >
+          Add to Cart
+        </button>
       </div>
-      <button
-        type="button"
-        onClick={handleAddToCart}
-        className="bg-[#2A59FE] text-white w-full py-2 px-4 rounded  "
-      >
-        Add to Cart
-      </button>
     </Link>
   );
 };

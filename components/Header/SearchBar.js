@@ -11,7 +11,7 @@ const SearchBar = () => {
   return (
     <div className="relative">
       <input
-        className="lg:w-1/2 w-4/5 placeholder:text-lg placeholder:font-medium placeholder:text-black py-[9px] pl-[40px] outline-none"
+        className="lg:w-1/2  placeholder:text-lg placeholder:font-medium placeholder:text-black py-[9px] pl-[40px] outline-none"
         placeholder="Search"
         type="search"
         onChange={(event) => dispatch(searchProduct(event.target.value))}

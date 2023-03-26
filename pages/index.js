@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
 import Filter from "../components/HomeScreen/Filter";
+
+import FilterMobile from "../components/HomeScreen/Filter/FilterMobile";
 import Product from "../components/HomeScreen/Product";
 import getProducts from "../redux/actions/products";
 
@@ -30,9 +32,12 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex">
-      <Filter />
-      <div className="w-8/12">
+    <div className="flex flex-col lg:flex-row">
+      <FilterMobile />
+      <div className="hidden lg:block w-full lg:w-4/12 pr-8">
+        <Filter />
+      </div>
+      <div className="w-full lg:w-8/12">
         {loading ? (
           <div>Loading...</div>
         ) : currentItems.length > 0 ? (
@@ -52,7 +57,7 @@ const Home = () => {
                 previousLabel="<"
                 renderOnZeroPageCount={null}
                 containerClassName="flex gap-[12px] text-gray-600  items-center"
-                activeClassName="bg-white px-3 rounded-md py-1 text-[#2A59FE] shadow-md"
+                activeClassName="bg-white px-3 rounded-md py-1 text-primary shadow-md"
               />
             </div>
           </div>

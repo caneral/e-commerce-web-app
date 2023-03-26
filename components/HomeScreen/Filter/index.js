@@ -25,7 +25,7 @@ const Filter = () => {
   const modelData = filteredModels && searchModelTerm ? filteredModels : models;
 
   return (
-    <div className="w-4/12 pr-8">
+    <div>
       <SortBy />
       <FilterWithSearchBox
         title="Brands"

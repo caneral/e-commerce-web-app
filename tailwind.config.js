@@ -8,7 +8,11 @@ module.exports = {
     "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#2A59FE",
+      },
+    },
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };
