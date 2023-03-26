@@ -2,6 +2,8 @@
   "name": "e-commerce-web-app",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {"email": "caneral.js@gmail.com", "name": "Caner Al"},
   "scripts": {
     "dev": "next dev",
     "build": "next build",
