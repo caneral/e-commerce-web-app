@@ -1,8 +1,8 @@
+import Card from "@components/Card";
+import Header from "@components/Header";
+import { decreaseQuantity, increaseQuantity } from "@redux/actions/cart";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "../components/Card";
-import Header from "../components/Header";
-import { decreaseQuantity, increaseQuantity } from "../redux/actions/cart";
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();

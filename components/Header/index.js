@@ -3,6 +3,8 @@ import React from "react";
 import CartAndProfile from "./CartAndProfile";
 import SearchBar from "./SearchBar";
 
+
+
 const Header = () => {
   return (
     <header className="bg-primary fixed top-0 w-full z-30">

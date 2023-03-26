@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {
   searchBrand,
   searchModel,
   setSelectedBrands,
   setSelectedModels,
-} from "../../../redux/actions/products";
+} from "@redux/actions/products";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import FilterWithSearchBox from "./FilterWithSearchBox";
 import SortBy from "./SortBy";
 

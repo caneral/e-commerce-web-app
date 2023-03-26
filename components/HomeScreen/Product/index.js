@@ -1,8 +1,8 @@
+import addToCart from "@redux/actions/cart";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useDispatch } from "react-redux";
-import addToCart from "../../../redux/actions/cart";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();

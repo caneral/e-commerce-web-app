@@ -1,10 +1,11 @@
+import Card from "@components/Card";
+import addToCart from "@redux/actions/cart";
+import getProduct from "@redux/actions/product";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "../../../components/Card/index";
-import addToCart from "../../../redux/actions/cart";
-import getProduct from "../../../redux/actions/product";
+
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { query } = useRouter();

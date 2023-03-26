@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import { Provider } from "react-redux";
-import store, { persistor } from "../redux/storeConfig/store";
-import MainLayout from "../layouts/MainLayout";
 import { PersistGate } from "redux-persist/integration/react";
+import MainLayout from "@layouts/MainLayout";
+import store, { persistor } from "@redux/storeConfig/store";
 
 const layouts = {
   Main: MainLayout,

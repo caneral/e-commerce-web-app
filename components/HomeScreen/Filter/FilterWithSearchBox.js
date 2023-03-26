@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Card from "../../Card";
-import SearchIcon from "../../../public/assets/icons/Search.svg";
+
+import SearchIcon from "@assets/icons/Search.svg";
+import Card from "@components/Card";
 
 const FilterWithSearchBox = ({
   title,

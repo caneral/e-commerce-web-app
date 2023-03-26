@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import ProfileIcon from "../../public/assets/icons/Profile.svg";
-import PortfeilIcon from "../../public/assets/icons/Portfeil.svg";
+import ProfileIcon from "@assets/icons/Profile.svg";
+import PortfeilIcon from "@assets/icons/Portfeil.svg";
 import { useSelector } from "react-redux";
 
 const CartAndProfile = () => {

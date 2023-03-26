@@ -1,9 +1,8 @@
+import { searchProduct } from "@redux/actions/products";
 import Image from "next/image";
 import React from "react";
 import { useDispatch } from "react-redux";
-import SearchIcon from "../../public/assets/icons/Search.svg";
-import { searchProduct } from "../../redux/actions/products";
-
+import SearchIcon from "@assets/icons/Search.svg";
 
 const SearchBar = () => {
   const dispatch = useDispatch();

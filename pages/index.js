@@ -1,11 +1,10 @@
+import Filter from "@components/HomeScreen/Filter";
+import FilterMobile from "@components/HomeScreen/Filter/FilterMobile";
+import Product from "@components/HomeScreen/Product";
+import getProducts from "@redux/actions/products";
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import Filter from "../components/HomeScreen/Filter";
-
-import FilterMobile from "../components/HomeScreen/Filter/FilterMobile";
-import Product from "../components/HomeScreen/Product";
-import getProducts from "../redux/actions/products";
 
 const Home = () => {
   const dispatch = useDispatch();

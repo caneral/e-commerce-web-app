@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import Card from "@components/Card";
+import { setSelectedSortType, sortProducts } from "@redux/actions/products";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setSelectedSortType,
-  sortProducts,
-} from "../../../redux/actions/products";
-import Card from "../../Card";
 import SortOption from "./SortOption";
 
 const SortBy = () => {
