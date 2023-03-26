@@ -1,6 +1,7 @@
 import Card from "@components/Card";
 import addToCart from "@redux/actions/cart";
 import getProduct from "@redux/actions/product";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -23,9 +24,17 @@ const ProductDetail = () => {
   };
 
   return loading ? (
-    <div>Loading...</div>
+    <div>
+      <Head>
+        <title>Eteration</title>
+      </Head>
+      Loading...
+    </div>
   ) : (
     <Card>
+      <Head>
+        <title>Eteration</title>
+      </Head>
       <div className="flex flex-col lg:flex-row lg:items-center lg:gap-3">
         <div className="lg:w-1/2 flex justify-center lg:h-full mb-4">
           <Image

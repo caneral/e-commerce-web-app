@@ -2,6 +2,7 @@ import Filter from "@components/HomeScreen/Filter";
 import FilterMobile from "@components/HomeScreen/Filter/FilterMobile";
 import Product from "@components/HomeScreen/Product";
 import getProducts from "@redux/actions/products";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,6 +33,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col lg:flex-row">
+      <Head>
+        <title>Eteration</title>
+      </Head>
       <FilterMobile />
       <div className="hidden lg:block w-full lg:w-4/12 pr-8">
         <Filter />
