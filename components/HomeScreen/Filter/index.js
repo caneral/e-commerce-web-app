@@ -19,7 +19,7 @@ const Filter = () => {
     searchBrandTerm,
     searchModelTerm,
   } = useSelector((state) => state.products);
-  const { brands, models } = products;
+  const { brands, models, loading } = products;
 
   const brandData = filteredBrands && searchBrandTerm ? filteredBrands : brands;
   const modelData = filteredModels && searchModelTerm ? filteredModels : models;
@@ -30,6 +30,7 @@ const Filter = () => {
       <FilterWithSearchBox
         title="Brands"
         data={brandData}
+        loading={loading}
         handleSearchBoxChange={(event) =>
           dispatch(searchBrand(event.target.value))
         }
@@ -40,6 +41,7 @@ const Filter = () => {
       <FilterWithSearchBox
         title="Model"
         data={modelData}
+        loading={loading}
         handleSearchBoxChange={(event) =>
           dispatch(searchModel(event.target.value))
         }

@@ -30,6 +30,7 @@ const initialState = {
   selectedSortType: null,
   filteredProducts: [],
   isFiltered: false,
+  deneme:'caner'
 };
 
 const products = (state = initialState, action) => {

@@ -6,6 +6,7 @@ import SearchIcon from "../../../public/assets/icons/Search.svg";
 const FilterWithSearchBox = ({
   title,
   data,
+  loading,
   handleCheckboxChange,
   handleSearchBoxChange,
 }) => {
@@ -23,22 +24,26 @@ const FilterWithSearchBox = ({
           </div>
         </div>
         <div className="overflow-scroll max-h-[105px]">
-          {data?.map((item) => (
-            <div key={item.id} className="flex items-center mb-4">
-              <input
-                className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
-                type="checkbox"
-                value={item.name}
-                onChange={handleCheckboxChange}
-              />
-              <label
-                htmlFor={item.name}
-                className="ml-2 text-sm font-light text-gray-500"
-              >
-                {item.name}
-              </label>
-            </div>
-          ))}
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            data?.map((item) => (
+              <div key={item.id} className="flex items-center mb-4">
+                <input
+                  className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
+                  type="checkbox"
+                  value={item.name}
+                  onChange={handleCheckboxChange}
+                />
+                <label
+                  htmlFor={item.name}
+                  className="ml-2 text-sm font-light text-gray-500"
+                >
+                  {item.name}
+                </label>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </Card>
