@@ -5,6 +5,7 @@ import {
   sortProducts,
 } from "../../../redux/actions/products";
 import Card from "../../Card";
+import SortOption from "./SortOption";
 
 const SortBy = () => {
   const dispatch = useDispatch();
@@ -14,68 +15,23 @@ const SortBy = () => {
     if (selectedSortType) dispatch(sortProducts(selectedSortType));
   }, [selectedSortType, dispatch]);
 
+  const data = [
+    { value: "old-to-new", label: "Old to new" },
+    { value: "new-to-old", label: "New to old" },
+    { value: "price-hight-to-low", label: "Price hight to low" },
+    { value: "price-low-to-high", label: "Price low to high" },
+  ];
+
   return (
     <Card title="Sort By">
-      <div className="flex items-center mb-4">
-        <input
-          className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
-          type="radio"
-          name="sort-by"
-          value="old-to-new"
-          onChange={() => dispatch(setSelectedSortType("old-to-new"))}
+      {data.map((item) => (
+        <SortOption
+          key={item.value}
+          value={item.value}
+          label={item.label}
+          onChange={() => dispatch(setSelectedSortType(item.value))}
         />
-        <label
-          htmlFor="old-to-new"
-          className="ml-2 text-sm font-light text-gray-500"
-        >
-          Old to new
-        </label>
-      </div>
-      <div className="flex items-center mb-4">
-        <input
-          className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
-          type="radio"
-          name="sort-by"
-          value="new-to-old"
-          onChange={() => dispatch(setSelectedSortType("new-to-old"))}
-        />
-        <label
-          htmlFor="new-to-old"
-          className="ml-2 text-sm font-light text-gray-500"
-        >
-          New to old
-        </label>
-      </div>
-      <div className="flex items-center mb-4">
-        <input
-          className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
-          type="radio"
-          name="sort-by"
-          value="price-hight-to-low"
-          onChange={() => dispatch(setSelectedSortType("price-hight-to-low"))}
-        />
-        <label
-          htmlFor="price-hight-to-low"
-          className="ml-2 text-sm font-light text-gray-500"
-        >
-          Price hight to low
-        </label>
-      </div>
-      <div className="flex items-center mb-4">
-        <input
-          className="form-radio h-4 w-4 hover:border-2  focus:ring-white"
-          type="radio"
-          name="sort-by"
-          value="price-low-to-high"
-          onChange={() => dispatch(setSelectedSortType("price-low-to-hight"))}
-        />
-        <label
-          htmlFor="price-low-to-high"
-          className="ml-2 text-sm font-light text-gray-500"
-        >
-          Price low to High
-        </label>
-      </div>
+      ))}
     </Card>
   );
 };

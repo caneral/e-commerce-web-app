@@ -77,7 +77,7 @@ export const sortProducts = (sortBy) => async (dispatch, getState) => {
     case "price-hight-to-low":
       sortedData = currentProducts.sort((a, b) => b.price - a.price);
       break;
-    case "price-low-to-hight":
+    case "price-low-to-high":
       sortedData = currentProducts.sort((a, b) => a.price - b.price);
       break;
     default:
